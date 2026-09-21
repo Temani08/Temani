@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>TEMANI - Bersama di Setiap Perjalanan</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f6fbf9;
+      color: #24332e;
+    }
+
+    header {
+      background: white;
+      padding: 18px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: bold;
+      color: #20a878;
+    }
+
+    .language select {
+      padding: 8px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      background: white;
+    }
+
+    .hero {
+      padding: 55px 22px;
+      text-align: center;
+      background: linear-gradient(135deg,#e8fff6,#f8fffc);
+    }
+
+    .hero h1 {
+      font-size: 34px;
+      margin-bottom: 16px;
+      color: #174d3b;
+    }
+
+    .hero p {
+      font-size: 17px;
+      line-height: 1.6;
+      color: #52655e;
+      max-width: 650px;
+      margin: auto;
+    }
+
+    .hero button {
+      margin-top: 25px;
+      padding: 14px 25px;
+      border: none;
+      border-radius: 12px;
+      background: #20a878;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 25px 18px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin: 20px 0 25px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+      gap: 15px;
+    }
+
+    .card {
+      background: white;
+      padding: 22px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    }
+
+    .card .icon {
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      margin-bottom: 8px;
+      color: #174d3b;
+    }
+
+    .card p {
+      color: #65756f;
+      line-height: 1.5;
+      font-size: 14px;
+    }
+
+    .upload-box {
+      background: white;
+      margin-top: 30px;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    }
+
+    .upload-box h2 {
+      margin-bottom: 10px;
+    }
+
+    .upload-box p {
+      color: #66756f;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    .form-group {
+      margin-bottom: 17px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 7px;
+      font-weight: bold;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border-radius: 9px;
+      border: 1px solid #d9e1de;
+      font-size: 15px;
+    }
+
+    textarea {
+      min-height: 90px;
+      resize: vertical;
+    }
+
+    .upload-button {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 10px;
+      background: #20a878;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .privacy {
+      margin-top: 30px;
+      background: #eaf8f3;
+      padding: 22px;
+      border-radius: 15px;
+    }
+
+    .privacy h3 {
+      margin-bottom: 8px;
+    }
+
+    .privacy p {
+      line-height: 1.5;
+      color: #53665f;
+    }
+
+    footer {
+      margin-top: 40px;
+      background: #174d3b;
+      color: white;
+      text-align: center;
+      padding: 25px;
+    }
+
+    footer p {
+      opacity: 0.8;
+      font-size: 13px;
+    }
+
+    @media(max-width:600px) {
+      .hero h1 {
+        font-size: 29px;
+      }
+
+      header {
+        padding: 15px;
+      }
+
+      .logo {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+
+  <div class="logo">
+    TEMANI
+  </div>
+
+  <div class="language">
+    <select id="language">
+      <option>🇮🇩 Indonesia</option>
+      <option>🇬🇧 English</option>
+      <option>🇯🇵 日本語</option>
+      <option>🇰🇷 한국어</option>
+      <option>🇨🇳 中文</option>
+      <option>🇸🇦 العربية</option>
+    </select>
+  </div>
+
+</header>
+
+
+<section class="hero">
+
+  <h1>
+    Bersama di Setiap Perjalanan
+  </h1>
+
+  <p>
+    TEMANI membantu keluarga menyimpan cerita, foto,
+    video, audio, dokumen, dan pesan penting dalam
+    satu ruang digital pribadi.
+  </p>
+
+  <button onclick="goUpload()">
+    Mulai Menyimpan Kenangan
+  </button>
+
+</section>
+
+
+<div class="container">
+
+  <h2 class="section-title">
+    Apa yang Bisa Disimpan?
+  </h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <div class="icon">📷</div>
+      <h3>Foto</h3>
+      <p>
+        Simpan foto keluarga dan momen penting
+        dalam ruang pribadi.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🎥</div>
+      <h3>Video</h3>
+      <p>
+        Simpan rekaman perjalanan dan pesan video
+        untuk keluarga.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🎙️</div>
+      <h3>Audio</h3>
+      <p>
+        Simpan suara, cerita, pesan, atau rekaman
+        pribadi.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">📄</div>
+      <h3>Dokumen</h3>
+      <p>
+        Simpan dokumen penting agar mudah ditemukan
+        ketika keluarga membutuhkannya.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">✍️</div>
+      <h3>Pesan & Cerita</h3>
+      <p>
+        Tuliskan cerita, pesan, atau catatan yang
+        ingin disimpan untuk keluarga.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🔐</div>
+      <h3>Ruang Pribadi</h3>
+      <p>
+        File dir
